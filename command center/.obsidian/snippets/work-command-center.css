@@ -1,0 +1,86 @@
+
+/* Windows Work Command Center — Things-inspired light dashboard */
+.work-command-center {
+  --wcc-blue: #007AFF;
+  --wcc-bg: #f6f7f9;
+  --wcc-card: #ffffff;
+  --wcc-border: #e5e7eb;
+  --wcc-text: #24292f;
+  --wcc-muted: #6b7280;
+}
+
+.work-command-center.markdown-preview-view,
+.work-command-center.markdown-source-view {
+  background: var(--wcc-bg);
+}
+
+.work-command-center .markdown-preview-sizer,
+.work-command-center .cm-sizer {
+  max-width: 1120px;
+}
+
+.work-command-center h1 {
+  font-size: 2.25em;
+  letter-spacing: -0.02em;
+  color: var(--wcc-text);
+  border-bottom: none;
+  margin-bottom: 0.2em;
+}
+
+.work-command-center h2 {
+  color: var(--wcc-blue);
+  font-size: 1.08em;
+  letter-spacing: 0.02em;
+  margin-top: 1.35em;
+  padding: 14px 16px 8px 16px;
+  background: var(--wcc-card);
+  border: 1px solid var(--wcc-border);
+  border-bottom: none;
+  border-radius: 14px 14px 0 0;
+}
+
+.work-command-center h2 + ul,
+.work-command-center h2 + ol,
+.work-command-center h2 + p {
+  margin-top: 0;
+  background: var(--wcc-card);
+  border-left: 1px solid var(--wcc-border);
+  border-right: 1px solid var(--wcc-border);
+  border-bottom: 1px solid var(--wcc-border);
+  border-radius: 0 0 14px 14px;
+  padding: 10px 18px 16px 40px;
+}
+
+.work-command-center .task-list-item-checkbox {
+  border-color: #b7bec8;
+}
+
+.work-command-center .task-list-item-checkbox:checked {
+  background-color: var(--wcc-blue);
+  border-color: var(--wcc-blue);
+}
+
+.work-command-center a {
+  color: var(--wcc-blue);
+}
+
+.work-command-center blockquote,
+.work-command-center .callout {
+  border-radius: 14px;
+}
+
+.work-command-center .callout {
+  background: #eef6ff;
+  border: 1px solid #d7e9ff;
+}
+
+.work-command-center hr {
+  border-color: #e7e9ed;
+  margin: 1.5em 0;
+}
+
+.work-command-center .wcc-kicker {
+  color: var(--wcc-muted);
+  font-size: 0.92em;
+  letter-spacing: 0.03em;
+}
