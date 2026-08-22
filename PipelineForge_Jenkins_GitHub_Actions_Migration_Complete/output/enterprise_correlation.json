@@ -1,0 +1,100 @@
+[
+  {
+    "jenkins_job": "Payments/api-build",
+    "full_name": "Payments/api-build",
+    "item_type": "pipeline",
+    "scm_detected": true,
+    "scm_url": "https://github.example/payments/api.git",
+    "script_path": "Jenkinsfile",
+    "maven": true,
+    "docker": true,
+    "aws": true,
+    "credentials_refs": 2,
+    "parameters": 1,
+    "triggers": 1,
+    "publishers": 1,
+    "normalized_scm_repo": "payments/api",
+    "github_repo": "payments/api",
+    "github_match_confidence": 1.0,
+    "github_repository": {
+      "github_repo": "payments/api",
+      "owner": "payments",
+      "name": "api",
+      "html_url": "https://github.example/payments/api",
+      "clone_url": "https://github.example/payments/api.git",
+      "ssh_url": "git@github.example:payments/api.git",
+      "default_branch": "main",
+      "archived": false,
+      "private": true,
+      "language": "Java",
+      "actions_workflows": [
+        {
+          "id": 101,
+          "name": "security-scan",
+          "path": ".github/workflows/security.yml",
+          "state": "active"
+        }
+      ],
+      "environments": [
+        "dev",
+        "prod"
+      ],
+      "runners": []
+    },
+    "repository_mapping_status": "MAPPED"
+  },
+  {
+    "jenkins_job": "Claims/ui-build",
+    "full_name": "Claims/ui-build",
+    "item_type": "pipeline",
+    "scm_detected": true,
+    "scm_url": "https://github.example/claims/ui.git",
+    "script_path": "Jenkinsfile",
+    "node": true,
+    "docker": false,
+    "aws": false,
+    "credentials_refs": 0,
+    "parameters": 0,
+    "triggers": 1,
+    "publishers": 0,
+    "normalized_scm_repo": "claims/ui",
+    "github_repo": "claims/ui",
+    "github_match_confidence": 1.0,
+    "github_repository": {
+      "github_repo": "claims/ui",
+      "owner": "claims",
+      "name": "ui",
+      "html_url": "https://github.example/claims/ui",
+      "clone_url": "https://github.example/claims/ui.git",
+      "ssh_url": "git@github.example:claims/ui.git",
+      "default_branch": "main",
+      "archived": false,
+      "private": true,
+      "language": "JavaScript",
+      "actions_workflows": [],
+      "environments": [],
+      "runners": []
+    },
+    "repository_mapping_status": "MAPPED"
+  },
+  {
+    "jenkins_job": "Legacy/batch",
+    "full_name": "Legacy/batch",
+    "item_type": "job",
+    "scm_detected": false,
+    "scm_url": null,
+    "script_path": null,
+    "python": true,
+    "docker": false,
+    "aws": false,
+    "credentials_refs": 3,
+    "parameters": 2,
+    "triggers": 2,
+    "publishers": 2,
+    "normalized_scm_repo": null,
+    "github_repo": null,
+    "github_match_confidence": 0.0,
+    "github_repository": null,
+    "repository_mapping_status": "UNMAPPED"
+  }
+]

@@ -1,0 +1,162 @@
+# Copyright (c) MAPFRE DevOps Platform
+#
+# Pull Request Workflow. Triggers when:
+#   - A pull request from feature to develop is created / synchronized
+#   - A pull request from hotfix to main is created / synchronized
+#   - A pull request from develop to release/* is created / synchronized
+#
+# Required secrets:
+#   - AZURE_ARTIFACTS_PW      (Organization)
+#   - SONAR_TOKEN             (Repository) - SonarQube authentication token
+#   - MAR2_GITHUB_GIT_TOKEN   (Repository) - GitHub token to access security repo (optional)
+#
+# Required variables (vars.*):
+#   - SONAR_PROJECT_KEY       (Repository) - SonarQube project key
+#   - SONAR_HOST_URL          (Repository) - SonarQube server URL
+
+name: PR workflow
+run-name: "Build and Test #${{ github.run_number }}: ${{ github.event.pull_request.title }}"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - develop
+      - main
+      - master
+      - release/*
+
+env:
+  # Azure Artifacts
+  AZURE_ARTIFACTS_PW: ${{ secrets.AZURE_ARTIFACTS_PW }}
+  # GitHub Tech User
+  MAR2_GITHUB_GIT_TOKEN: ${{ secrets.MAR2_GITHUB_GIT_TOKEN }}
+  # Entity asociated to the product
+  ENTITY: musa
+
+  # Environment - For CDK Synth
+  # Source branch release/*  -> pro
+  # Source branch hotfix/*   -> pro
+  # Source branch develop    -> pre
+  # Source branch bugfix/*   -> pre
+  # Source branch feature/*  -> dev
+  ENV: ${{ (startsWith(github.event.pull_request.head.ref, 'release/') || startsWith(github.event.pull_request.head.ref, 'hotfix/')) && 'pro' || (github.event.pull_request.head.ref == 'develop' || startsWith(github.event.pull_request.head.ref, 'bugfix/')) && 'pre' || 'dev' }}
+
+jobs:
+  pull-request:
+    name: Build and Test
+    if: ( startsWith(github.event.pull_request.head.ref, 'feature/') || startsWith(github.event.pull_request.head.ref, 'hotfix/') || github.event.pull_request.head.ref == 'develop' || startsWith(github.event.pull_request.head.ref, 'bugfix/') || startsWith(github.event.pull_request.head.ref, 'release/') )
+    permissions:
+      contents: read
+    # Self-hosted Runner
+    # release -> pro (AWS account)
+    # hotfix  -> pro (AWS account)
+    # feature -> dev (AWS account)
+    # develop -> pre (AWS account)
+    # bugfix  -> pre (AWS account)
+    runs-on: [self-hosted, mar, "${{ (startsWith(github.event.pull_request.head.ref, 'release/') || startsWith(github.event.pull_request.head.ref, 'hotfix/')) && 'pro' || (github.event.pull_request.head.ref == 'develop' || startsWith(github.event.pull_request.head.ref, 'bugfix/')) && 'pre' || 'dev' }}"]
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Setup Node & CDK
+      - name: Setup Environment Tools
+        uses: mapfre-tech/action-mar2-cdk/setup-environment@v1
+       
+      # Read project config:
+      #  - version (package.json)
+      #  - component-id (config/constants.ts)
+      #  - AWS account [account-id, region, env] (config/$env-properties.ts)
+      - name: Read CDK App Config
+        id: read-app-config
+        uses: mapfre-tech/action-mar2-cdk/read-app-config@v1
+        with:
+          environment: ${{ env.ENV }}
+
+      # Install dependencies
+      - name: Install dependencies
+        uses: mapfre-tech/action-npm/ci@v1
+        with:
+          feed: 'releases'
+          azure_npm_secret: ${{ env.AZURE_ARTIFACTS_PW }}
+      
+      # Run 'npm ci' on /sources/code/layers/MARUtilitiesLayer/nodejs
+      - name: Install MARUtilitiesLayer dependencies
+        uses: mapfre-tech/action-npm/ci@v1
+        with:
+          working_directory: ./sources/code/layers/MARUtilitiesLayer/nodejs
+          feed: 'releases'    
+          azure_npm_secret: ${{ env.AZURE_ARTIFACTS_PW }}
+      
+      - name: Build
+        uses: mapfre-tech/action-npm/build@v1
+
+      # npm test
+      - name: Test
+        uses: mapfre-tech/action-npm/test@v1
+
+      # npm run eslint
+      - name: Lint 
+        continue-on-error: true
+        uses: mapfre-tech/action-npm/lint@v1
+        
+      # Run CDK synth
+      - name: CDK Synth
+        uses: mapfre-tech/action-mar2-cdk/cdk@v1
+        with:
+          account: '${{ steps.read-app-config.outputs.account-id }}'
+          region: ${{ steps.read-app-config.outputs.region }}
+          environment: ${{ steps.read-app-config.outputs.env }}
+          product-id: ${{ steps.read-app-config.outputs.product-id }}
+          entity: ${{ env.ENTITY }}
+          github-token: ${{ env.MAR2_GITHUB_GIT_TOKEN }}
+          command: synth
+
+
+  # Code Quality/Sonar job
+  code-quality:
+    needs: pull-request
+    name: Code Quality
+    runs-on: [self-hosted, mar, dev]
+    container:
+      image: acrmapfredevops.azurecr.io/mapfre/global/sonar-scanner-cli:10.0
+      options: --user root
+      credentials:
+        username: ${{ secrets.ACR_TOKEN_USER }}
+        password: ${{ secrets.ACR_TOKEN_PW }}
+    permissions:
+      contents: read
+
+    env:
+      SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+      SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
+      SONAR_PROJECT_NAME: ${{ github.event.repository.name }}
+      ORGANIZATION: ${{ github.repository_owner }}
+      COMPONENT_ID: ${{ vars.COMPONENT_ID }}
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # required for SonarQube blame/history analysis
+
+      - name: SonarQube Analysis
+        uses: mapfre-tech/action-sonarqube/scanner-cli@v1
+        with:
+          projectKey: ${{ env.SONAR_PROJECT_KEY }}
+          projectName: ${{ env.SONAR_PROJECT_NAME }}
+          hostURL: ${{ env.SONAR_HOST_URL }}
+          authToken: ${{ secrets.SONAR_TOKEN }}
+          projectBaseDir: '.'
+          params: -Dproject.settings=sonar-project.properties
+          checkQualityGate: 'true'
+
+      # Placeholder for SAST/SCA integration hook
+      - name: sast-sca
+        run: |
+          echo "SAST + SCA"

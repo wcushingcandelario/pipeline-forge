@@ -1,0 +1,13 @@
+{
+  "jenkins": {
+    "ok": true,
+    "mode": "NORMAL",
+    "executors": 12,
+    "jenkins_version": "2.456",
+    "base_url": "https://musa.pro.devops.mapfre.com/jenkins/"
+  },
+  "github": {
+    "ok": false,
+    "error": "HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /user (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))"
+  }
+}

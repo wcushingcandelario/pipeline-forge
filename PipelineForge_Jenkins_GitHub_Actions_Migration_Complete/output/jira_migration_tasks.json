@@ -1,0 +1,169 @@
+[
+  {
+    "epic": {
+      "issue_type": "Epic",
+      "summary": "Migrate Jenkins Pipeline: Claims/ui-build",
+      "description": "Migration of Jenkins pipeline 'Claims/ui-build' to GitHub Actions.",
+      "priority": "Low"
+    },
+    "stories": [
+      {
+        "issue_type": "Story",
+        "summary": "Confirm source repository and owners",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Generate/adapt GitHub Actions workflow",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Run build/test parity validation",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Cut over and observe",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Retire Jenkins job after acceptance",
+        "parent_epic": "Migrate Jenkins Pipeline: Claims/ui-build",
+        "description": "Complete migration activity for Jenkins job 'Claims/ui-build'."
+      }
+    ],
+    "migration_metadata": {
+      "jenkins_job": "Claims/ui-build",
+      "classification": "SIMPLE",
+      "score": 1,
+      "strategy": "Template-led migration",
+      "risks": []
+    }
+  },
+  {
+    "epic": {
+      "issue_type": "Epic",
+      "summary": "Migrate Jenkins Pipeline: Payments/api-build",
+      "description": "Migration of Jenkins pipeline 'Payments/api-build' to GitHub Actions.",
+      "priority": "High"
+    },
+    "stories": [
+      {
+        "issue_type": "Story",
+        "summary": "Confirm source repository and owners",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Generate/adapt GitHub Actions workflow",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Run build/test parity validation",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Cut over and observe",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Retire Jenkins job after acceptance",
+        "parent_epic": "Migrate Jenkins Pipeline: Payments/api-build",
+        "description": "Complete migration activity for Jenkins job 'Payments/api-build'."
+      }
+    ],
+    "migration_metadata": {
+      "jenkins_job": "Payments/api-build",
+      "classification": "COMPLEX",
+      "score": 9,
+      "strategy": "Engineer-led migration with validation",
+      "risks": [
+        "Credential migration / OIDC review",
+        "Container build/publish parity",
+        "Post-build publisher parity"
+      ]
+    }
+  },
+  {
+    "epic": {
+      "issue_type": "Epic",
+      "summary": "Migrate Jenkins Pipeline: Legacy/batch",
+      "description": "Migration of Jenkins pipeline 'Legacy/batch' to GitHub Actions.",
+      "priority": "High"
+    },
+    "stories": [
+      {
+        "issue_type": "Story",
+        "summary": "Confirm source repository and owners",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Generate/adapt GitHub Actions workflow",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Run build/test parity validation",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Cut over and observe",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      },
+      {
+        "issue_type": "Story",
+        "summary": "Retire Jenkins job after acceptance",
+        "parent_epic": "Migrate Jenkins Pipeline: Legacy/batch",
+        "description": "Complete migration activity for Jenkins job 'Legacy/batch'."
+      }
+    ],
+    "migration_metadata": {
+      "jenkins_job": "Legacy/batch",
+      "classification": "COMPLEX",
+      "score": 13,
+      "strategy": "Engineer-led migration with validation",
+      "risks": [
+        "Credential migration / OIDC review",
+        "Post-build publisher parity",
+        "SCM mapping missing"
+      ]
+    }
+  }
+]

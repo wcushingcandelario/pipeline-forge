@@ -1,0 +1,32 @@
+[
+  {
+    "github_repo": "payments/api",
+    "owner": "payments",
+    "name": "api",
+    "html_url": "https://github.example/payments/api",
+    "clone_url": "https://github.example/payments/api.git",
+    "ssh_url": "git@github.example:payments/api.git",
+    "default_branch": "main",
+    "archived": false,
+    "private": true,
+    "language": "Java",
+    "actions_workflows": [{"id": 101, "name": "security-scan", "path": ".github/workflows/security.yml", "state": "active"}],
+    "environments": ["dev", "prod"],
+    "runners": []
+  },
+  {
+    "github_repo": "claims/ui",
+    "owner": "claims",
+    "name": "ui",
+    "html_url": "https://github.example/claims/ui",
+    "clone_url": "https://github.example/claims/ui.git",
+    "ssh_url": "git@github.example:claims/ui.git",
+    "default_branch": "main",
+    "archived": false,
+    "private": true,
+    "language": "JavaScript",
+    "actions_workflows": [],
+    "environments": [],
+    "runners": []
+  }
+]

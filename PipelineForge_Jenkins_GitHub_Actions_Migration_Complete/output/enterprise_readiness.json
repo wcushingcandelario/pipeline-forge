@@ -1,0 +1,202 @@
+{
+  "summary": {
+    "total": 3,
+    "mapped": 2,
+    "unmapped": 1,
+    "mapping_rate_pct": 66.7,
+    "readiness": {
+      "READY": 1,
+      "MANUAL_REVIEW": 0,
+      "NEEDS_REMEDIATION": 1,
+      "BLOCKED": 1
+    }
+  },
+  "items": [
+    {
+      "jenkins_job": "Payments/api-build",
+      "full_name": "Payments/api-build",
+      "item_type": "pipeline",
+      "scm_detected": true,
+      "scm_url": "https://github.example/payments/api.git",
+      "script_path": "Jenkinsfile",
+      "maven": true,
+      "docker": true,
+      "aws": true,
+      "credentials_refs": 2,
+      "parameters": 1,
+      "triggers": 1,
+      "publishers": 1,
+      "normalized_scm_repo": "payments/api",
+      "github_repo": "payments/api",
+      "github_match_confidence": 1.0,
+      "github_repository": {
+        "github_repo": "payments/api",
+        "owner": "payments",
+        "name": "api",
+        "html_url": "https://github.example/payments/api",
+        "clone_url": "https://github.example/payments/api.git",
+        "ssh_url": "git@github.example:payments/api.git",
+        "default_branch": "main",
+        "archived": false,
+        "private": true,
+        "language": "Java",
+        "actions_workflows": [
+          {
+            "id": 101,
+            "name": "security-scan",
+            "path": ".github/workflows/security.yml",
+            "state": "active"
+          }
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ],
+        "runners": []
+      },
+      "repository_mapping_status": "MAPPED",
+      "enterprise_readiness": "NEEDS_REMEDIATION",
+      "readiness_score": 55,
+      "blockers": [],
+      "remediation": [
+        "Credential/OIDC mapping required",
+        "Post-build publisher parity review required"
+      ],
+      "verification_checks": [
+        "Container build/publish parity",
+        "AWS OIDC/role trust validation",
+        "Existing Actions workflows detected (1); reuse/conflict review"
+      ],
+      "dependencies": [
+        {
+          "type": "credential",
+          "count": 2,
+          "action": "Map to GitHub secret or OIDC/federated identity"
+        },
+        {
+          "type": "cloud_identity",
+          "provider": "aws",
+          "action": "Prefer GitHub OIDC; avoid long-lived AWS keys"
+        },
+        {
+          "type": "container",
+          "action": "Confirm registry authentication, buildx requirements, and image promotion"
+        },
+        {
+          "type": "publisher",
+          "count": 1,
+          "action": "Map Jenkins post-build publishers to Actions jobs/steps/integrations"
+        },
+        {
+          "type": "parameters",
+          "count": 1,
+          "action": "Map build parameters to workflow_dispatch inputs or repository/environment variables"
+        },
+        {
+          "type": "triggers",
+          "count": 1,
+          "action": "Map Jenkins triggers to push/pull_request/schedule/workflow_dispatch"
+        }
+      ]
+    },
+    {
+      "jenkins_job": "Claims/ui-build",
+      "full_name": "Claims/ui-build",
+      "item_type": "pipeline",
+      "scm_detected": true,
+      "scm_url": "https://github.example/claims/ui.git",
+      "script_path": "Jenkinsfile",
+      "node": true,
+      "docker": false,
+      "aws": false,
+      "credentials_refs": 0,
+      "parameters": 0,
+      "triggers": 1,
+      "publishers": 0,
+      "normalized_scm_repo": "claims/ui",
+      "github_repo": "claims/ui",
+      "github_match_confidence": 1.0,
+      "github_repository": {
+        "github_repo": "claims/ui",
+        "owner": "claims",
+        "name": "ui",
+        "html_url": "https://github.example/claims/ui",
+        "clone_url": "https://github.example/claims/ui.git",
+        "ssh_url": "git@github.example:claims/ui.git",
+        "default_branch": "main",
+        "archived": false,
+        "private": true,
+        "language": "JavaScript",
+        "actions_workflows": [],
+        "environments": [],
+        "runners": []
+      },
+      "repository_mapping_status": "MAPPED",
+      "enterprise_readiness": "READY",
+      "readiness_score": 100,
+      "blockers": [],
+      "remediation": [],
+      "verification_checks": [],
+      "dependencies": [
+        {
+          "type": "triggers",
+          "count": 1,
+          "action": "Map Jenkins triggers to push/pull_request/schedule/workflow_dispatch"
+        }
+      ]
+    },
+    {
+      "jenkins_job": "Legacy/batch",
+      "full_name": "Legacy/batch",
+      "item_type": "job",
+      "scm_detected": false,
+      "scm_url": null,
+      "script_path": null,
+      "python": true,
+      "docker": false,
+      "aws": false,
+      "credentials_refs": 3,
+      "parameters": 2,
+      "triggers": 2,
+      "publishers": 2,
+      "normalized_scm_repo": null,
+      "github_repo": null,
+      "github_match_confidence": 0.0,
+      "github_repository": null,
+      "repository_mapping_status": "UNMAPPED",
+      "enterprise_readiness": "BLOCKED",
+      "readiness_score": 15,
+      "blockers": [
+        "GitHub repository is not mapped"
+      ],
+      "remediation": [
+        "Jenkinsfile/script path is missing or pipeline is not SCM-backed",
+        "Credential/OIDC mapping required",
+        "Post-build publisher parity review required"
+      ],
+      "verification_checks": [],
+      "dependencies": [
+        {
+          "type": "credential",
+          "count": 3,
+          "action": "Map to GitHub secret or OIDC/federated identity"
+        },
+        {
+          "type": "publisher",
+          "count": 2,
+          "action": "Map Jenkins post-build publishers to Actions jobs/steps/integrations"
+        },
+        {
+          "type": "parameters",
+          "count": 2,
+          "action": "Map build parameters to workflow_dispatch inputs or repository/environment variables"
+        },
+        {
+          "type": "triggers",
+          "count": 2,
+          "action": "Map Jenkins triggers to push/pull_request/schedule/workflow_dispatch"
+        }
+      ]
+    }
+  ]
+}

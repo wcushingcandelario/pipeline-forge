@@ -1,0 +1,84 @@
+[
+  {
+    "job": "Claims/ui-build",
+    "parity_score": 80,
+    "status": "READY_FOR_ENGINEERING_REVIEW",
+    "checks": {
+      "source_mapped": true,
+      "workflow_generated": false,
+      "technology_matched": true,
+      "trigger_review": true,
+      "secrets_review": true,
+      "runner_review": true,
+      "artifact_review": true,
+      "deployment_review": true
+    },
+    "manual_validation_required": [
+      "workflow_generated"
+    ],
+    "risk_count": 0,
+    "recommended_tests": [
+      "trigger parity",
+      "build/test parity",
+      "artifact parity",
+      "credential/OIDC review",
+      "runner/network review",
+      "deployment/rollback review"
+    ]
+  },
+  {
+    "job": "Payments/api-build",
+    "parity_score": 80,
+    "status": "READY_FOR_ENGINEERING_REVIEW",
+    "checks": {
+      "source_mapped": true,
+      "workflow_generated": false,
+      "technology_matched": true,
+      "trigger_review": true,
+      "secrets_review": true,
+      "runner_review": true,
+      "artifact_review": true,
+      "deployment_review": true
+    },
+    "manual_validation_required": [
+      "workflow_generated"
+    ],
+    "risk_count": 3,
+    "recommended_tests": [
+      "trigger parity",
+      "build/test parity",
+      "artifact parity",
+      "credential/OIDC review",
+      "runner/network review",
+      "deployment/rollback review"
+    ]
+  },
+  {
+    "job": "Legacy/batch",
+    "parity_score": 65,
+    "status": "NEEDS_REVIEW",
+    "checks": {
+      "source_mapped": false,
+      "workflow_generated": false,
+      "technology_matched": true,
+      "trigger_review": true,
+      "secrets_review": true,
+      "runner_review": true,
+      "artifact_review": true,
+      "deployment_review": true
+    },
+    "manual_validation_required": [
+      "source_mapped",
+      "workflow_generated"
+    ],
+    "risk_count": 3,
+    "recommended_tests": [
+      "trigger parity",
+      "build/test parity",
+      "artifact parity",
+      "credential/OIDC review",
+      "runner/network review",
+      "deployment/rollback review"
+    ]
+  }
+]

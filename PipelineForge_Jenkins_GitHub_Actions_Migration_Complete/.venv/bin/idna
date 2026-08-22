@@ -1,0 +1,6 @@
+#!/root/git/pipeline-forge/PipelineForge_Jenkins_GitHub_Actions_Migration_Complete/.venv/bin/python3
+import sys
+from idna.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

@@ -1,0 +1,40 @@
+[
+  {
+    "job": "Claims/ui-build",
+    "disposition": "FACTORY_CANDIDATE",
+    "recommended_priority": 1,
+    "recommended_template": "node.yml",
+    "reusable_workflow": "reusable-node.yml",
+    "confidence": 0.86,
+    "risk_summary": [],
+    "next_action": "Migrate in an early factory wave"
+  },
+  {
+    "job": "Payments/api-build",
+    "disposition": "SPECIALIST_REVIEW",
+    "recommended_priority": 3,
+    "recommended_template": "java-maven.yml",
+    "reusable_workflow": "reusable-java-maven.yml",
+    "confidence": 0.86,
+    "risk_summary": [
+      "Credential migration / OIDC review",
+      "Container build/publish parity",
+      "Post-build publisher parity"
+    ],
+    "next_action": "Perform manual design review before scheduling"
+  },
+  {
+    "job": "Legacy/batch",
+    "disposition": "SPECIALIST_REVIEW",
+    "recommended_priority": 3,
+    "recommended_template": "python.yml",
+    "reusable_workflow": "reusable-python.yml",
+    "confidence": 0.86,
+    "risk_summary": [
+      "Credential migration / OIDC review",
+      "Post-build publisher parity",
+      "SCM mapping missing"
+    ],
+    "next_action": "Perform manual design review before scheduling"
+  }
+]

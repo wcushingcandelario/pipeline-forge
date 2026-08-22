@@ -1,0 +1,140 @@
+{
+  "summary": {
+    "repositories_or_jobs": 3,
+    "team_size": 4,
+    "sprints": 1,
+    "planned_days": 10,
+    "target_days": 180,
+    "within_target": true
+  },
+  "items": [
+    {
+      "jenkins_job": "Claims/ui-build",
+      "full_name": "Claims/ui-build",
+      "item_type": "pipeline",
+      "scm_detected": true,
+      "scm_url": "https://github.example/claims/ui.git",
+      "script_path": "Jenkinsfile",
+      "node": true,
+      "docker": false,
+      "aws": false,
+      "credentials_refs": 0,
+      "parameters": 0,
+      "triggers": 1,
+      "publishers": 0,
+      "migration_score": 1,
+      "migration_classification": "SIMPLE",
+      "migration_readiness": "READY",
+      "signals": [],
+      "risks": [],
+      "template": "node.yml",
+      "confidence": 0.86,
+      "reusable_workflow": "reusable-node.yml",
+      "runner": "ubuntu-latest",
+      "match_reasons": [
+        "node"
+      ],
+      "wave": 1,
+      "sprint": 1,
+      "effort_points": 1,
+      "strategy": "Template-led migration",
+      "tasks": [
+        "Confirm source repository and owners",
+        "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "Generate/adapt GitHub Actions workflow",
+        "Run build/test parity validation",
+        "Cut over and observe",
+        "Retire Jenkins job after acceptance"
+      ]
+    },
+    {
+      "jenkins_job": "Payments/api-build",
+      "full_name": "Payments/api-build",
+      "item_type": "pipeline",
+      "scm_detected": true,
+      "scm_url": "https://github.example/payments/api.git",
+      "script_path": "Jenkinsfile",
+      "maven": true,
+      "docker": true,
+      "aws": true,
+      "credentials_refs": 2,
+      "parameters": 1,
+      "triggers": 1,
+      "publishers": 1,
+      "migration_score": 9,
+      "migration_classification": "COMPLEX",
+      "migration_readiness": "READY",
+      "signals": [
+        "docker",
+        "aws"
+      ],
+      "risks": [
+        "Credential migration / OIDC review",
+        "Container build/publish parity",
+        "Post-build publisher parity"
+      ],
+      "template": "java-maven.yml",
+      "confidence": 0.86,
+      "reusable_workflow": "reusable-java-maven.yml",
+      "runner": "ubuntu-latest",
+      "match_reasons": [
+        "maven"
+      ],
+      "wave": 1,
+      "sprint": 1,
+      "effort_points": 4,
+      "strategy": "Engineer-led migration with validation",
+      "tasks": [
+        "Confirm source repository and owners",
+        "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "Generate/adapt GitHub Actions workflow",
+        "Run build/test parity validation",
+        "Cut over and observe",
+        "Retire Jenkins job after acceptance"
+      ]
+    },
+    {
+      "jenkins_job": "Legacy/batch",
+      "full_name": "Legacy/batch",
+      "item_type": "job",
+      "scm_detected": false,
+      "scm_url": null,
+      "script_path": null,
+      "python": true,
+      "docker": false,
+      "aws": false,
+      "credentials_refs": 3,
+      "parameters": 2,
+      "triggers": 2,
+      "publishers": 2,
+      "migration_score": 13,
+      "migration_classification": "COMPLEX",
+      "migration_readiness": "NEEDS_REPOSITORY_MAPPING",
+      "signals": [],
+      "risks": [
+        "Credential migration / OIDC review",
+        "Post-build publisher parity",
+        "SCM mapping missing"
+      ],
+      "template": "python.yml",
+      "confidence": 0.86,
+      "reusable_workflow": "reusable-python.yml",
+      "runner": "ubuntu-latest",
+      "match_reasons": [
+        "python"
+      ],
+      "wave": 1,
+      "sprint": 1,
+      "effort_points": 4,
+      "strategy": "Engineer-led migration with validation",
+      "tasks": [
+        "Confirm source repository and owners",
+        "Map Jenkins credentials/secrets to GitHub environments or OIDC",
+        "Generate/adapt GitHub Actions workflow",
+        "Run build/test parity validation",
+        "Cut over and observe",
+        "Retire Jenkins job after acceptance"
+      ]
+    }
+  ]
+}

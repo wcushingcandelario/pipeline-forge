@@ -1,0 +1,4 @@
+produce a side by side migration pattern matrix from jenkins to github workflows using the following files from the develop branch cicd/jenkinsfileci, .github/workflows/merge-commit.yml and include .github/workflows/checkmarx.yml
+ 
+and then also a second prompt, but replace merge-commit.yml with pull-request.yml
+ 

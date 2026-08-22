@@ -1,0 +1,26 @@
+[
+  {
+    "pattern": "maven+docker|aws",
+    "count": 1,
+    "jobs": [
+      "Payments/api-build"
+    ],
+    "recommended_reusable_workflow": "maven-docker-aws.yml"
+  },
+  {
+    "pattern": "node|generic",
+    "count": 1,
+    "jobs": [
+      "Claims/ui-build"
+    ],
+    "recommended_reusable_workflow": "node-generic.yml"
+  },
+  {
+    "pattern": "python|generic",
+    "count": 1,
+    "jobs": [
+      "Legacy/batch"
+    ],
+    "recommended_reusable_workflow": "python-generic.yml"
+  }
+]

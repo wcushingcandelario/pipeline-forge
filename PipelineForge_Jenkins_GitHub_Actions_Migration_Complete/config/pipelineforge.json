@@ -1,0 +1,9 @@
+{
+  "migration": {
+    "target_days": 180,
+    "team_size": 4,
+    "sprint_days": 10
+  },
+  "outputs": "output",
+  "notes": "Credentials are loaded only from environment variables; do not store secrets here."
+}

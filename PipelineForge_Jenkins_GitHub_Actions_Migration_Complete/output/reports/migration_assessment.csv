@@ -1,0 +1,4 @@
+jenkins_job,full_name,scm_url,migration_classification,migration_score,migration_readiness,wave,sprint,strategy
+Claims/ui-build,Claims/ui-build,https://github.example/claims/ui.git,SIMPLE,1,READY,1,1,Template-led migration
+Payments/api-build,Payments/api-build,https://github.example/payments/api.git,COMPLEX,9,READY,1,1,Engineer-led migration with validation
+Legacy/batch,Legacy/batch,,COMPLEX,13,NEEDS_REPOSITORY_MAPPING,1,1,Engineer-led migration with validation

@@ -1,0 +1,472 @@
+{
+  "release": "PipelineForge Enterprise Integration v3",
+  "safety_mode": "read-only",
+  "automated_tests_passed": 10,
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "c734bf583bdbfbe67f1e5846c836fc8cf4105201ee7ca22b1ed6e8fa021b5cea",
+      "size": 297
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "8172e1b5f9abbad346b37b86458619ca0ce845290e68aa260a3a3496e0989532",
+      "size": 1558
+    },
+    {
+      "path": "README.md",
+      "sha256": "a45307f2e356171b2da8a1c19bf8794e02b4622bcb4dd1f5ce5a8a1795bce8f2",
+      "size": 2925
+    },
+    {
+      "path": "application/config_loader.py",
+      "sha256": "c6428e1cd7813307683e0747dfb13d318cf3b2e1890516e6f5835a53856f5516",
+      "size": 145
+    },
+    {
+      "path": "application/orchestrator.py",
+      "sha256": "23d6177bf5d68b650f8bd27b59591e089ef0cd622a7e18fe75b3dbaf03641f84",
+      "size": 178
+    },
+    {
+      "path": "application/orchestrator_recovered.py",
+      "sha256": "2c0971a718827627bb9a69569d2aa4b24e6e555af556ccd9dfccfca15474fbc5",
+      "size": 522
+    },
+    {
+      "path": "application/pipelineforge_cli.py",
+      "sha256": "af622c15f1b192c2b773128c407f6abb689787a2bd8aed7aa9b5aebf6d34a738",
+      "size": 338
+    },
+    {
+      "path": "config/pipelineforge.json",
+      "sha256": "d9ce89fc1fa681a261083ffe1b06cf8b92546a0b67e79b0fc920e2ca8b478175",
+      "size": 210
+    },
+    {
+      "path": "config/pipelineforge.yaml",
+      "sha256": "4a6033606bd168457aea8a4ab08327de55b705a3b0c37a9a71453d3004eee2f9",
+      "size": 158
+    },
+    {
+      "path": "connectors/github/github_connector.py",
+      "sha256": "7162304c174ebfd7dd9994a1baf240ebed6b5e9802139cdeb224af2b6dc8e1e6",
+      "size": 78
+    },
+    {
+      "path": "connectors/gitlab/gitlab_connector.py",
+      "sha256": "c051074a67fd148694db5e9de5500bed3c18f95b25472a3b53a25dfbae994299",
+      "size": 78
+    },
+    {
+      "path": "connectors/jenkins/jenkins_connector.py",
+      "sha256": "550331dfe735e8e37de1add38934f66259bc8d494a2b022d013fa5fb981594b9",
+      "size": 79
+    },
+    {
+      "path": "connectors/jira/jira_connector.py",
+      "sha256": "fd41e63f5fdd654a32adc53c5e85527e3db30c01a57abfbd10e6eff87794c9ba",
+      "size": 76
+    },
+    {
+      "path": "database/database.py",
+      "sha256": "44c9e7c1ebcc552fe2bce1d92c18a957545e813d6c502c4202ba539270bafbff",
+      "size": 82
+    },
+    {
+      "path": "database/models.py",
+      "sha256": "d5a5c94c8e7a5d8bc3a786dc4458c66c06a61e7ffdb1b7b34fc50f6f030f091d",
+      "size": 52
+    },
+    {
+      "path": "deployment/unix/demo.sh",
+      "sha256": "18f408096c72a30e2aafe488e7c8abf040f885f6ace1775bc435e48aa1144170",
+      "size": 88
+    },
+    {
+      "path": "deployment/unix/setup.sh",
+      "sha256": "80875e516c44781c9b80bb4bfa18054b80952172713af081b1850f7a524c67db",
+      "size": 210
+    },
+    {
+      "path": "deployment/unix/setup_pipelineforge.sh",
+      "sha256": "c1323496a15fd46b1c4a6e086925e59b2aa4ca6f50465a8e57b0b176680e9b76",
+      "size": 116
+    },
+    {
+      "path": "deployment/unix/start_pipelineforge.sh",
+      "sha256": "8e0ea7c2766f764bad45e5b9516d4371d9091824a536aff817bbced5f2c2d241",
+      "size": 108
+    },
+    {
+      "path": "deployment/windows/demo.ps1",
+      "sha256": "80b121b607b53cc6eb7f2e53b99bfd5151b28a10b981f1437b29a05b551e6df6",
+      "size": 51
+    },
+    {
+      "path": "deployment/windows/setup.ps1",
+      "sha256": "28de777af9155d05a5cbf41ad5d951d76f7a1da2eeab553ff585828ac6494d96",
+      "size": 282
+    },
+    {
+      "path": "deployment/windows/setup_pipelineforge.ps1",
+      "sha256": "41547f8eb6d4031a31b8958376ff4d19dce110e72af22076f73fd5e2163f2fba",
+      "size": 169
+    },
+    {
+      "path": "deployment/windows/start_pipelineforge.ps1",
+      "sha256": "127e5b998df112e15ed6a9b3ea9aefc452bd012e5aa242bfd12473575f53dcf5",
+      "size": 99
+    },
+    {
+      "path": "docs/ENTERPRISE_INTEGRATION.md",
+      "sha256": "e61d5ce16d8526a6420e87c572c53894f78141d90accd363ce65c1290a845ec9",
+      "size": 1884
+    },
+    {
+      "path": "docs/Linux_Mac_Installation.md",
+      "sha256": "3216f99a977c481fbafc3f8b504030cd4051c8c431380485c9e32ed36f225177",
+      "size": 83
+    },
+    {
+      "path": "docs/MIGRATION_BLUEPRINT.md",
+      "sha256": "4186c03d3de79b97155d465dc59ece8ee1d24be5ddbb591da3d135dfe5603c34",
+      "size": 835
+    },
+    {
+      "path": "docs/OPERATING_GUIDE.md",
+      "sha256": "94b7654985fabb65b11715ecb8933cbf6d11db70115c035563cc2a7934131bfc",
+      "size": 1465
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "sha256": "75f2b3c74d4ed327258fbfd0c92aedd0b79bdc41f11e9b6fd44dc54fc121048e",
+      "size": 554
+    },
+    {
+      "path": "docs/Windows_Installation.md",
+      "sha256": "d90c689b49b5603b58116bd2c4c262276df29763fe738709f4524d20ea6cf3b7",
+      "size": 81
+    },
+    {
+      "path": "engine/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "engine/engine_runner.py",
+      "sha256": "5df96e556fd6951f50cc5fe4aa3b8d5ddc70944aa15a8197946b2d6dfe75dcbe",
+      "size": 83
+    },
+    {
+      "path": "engine/execution_context.py",
+      "sha256": "f8e8b20595bcfdbaed1c4ee7caa1ca0361a05a2a8784e20c79fceba83c11b543",
+      "size": 116
+    },
+    {
+      "path": "engine/pipeline_executor.py",
+      "sha256": "1991de58a8152c69466133001efe789d73ad73ffe3f93df84fdcab2cbfc012ad",
+      "size": 918
+    },
+    {
+      "path": "engine/workspace_manager.py",
+      "sha256": "44095d70e5782dab3695bc8e61b73af868de85cc0b6a8f3e0530fc9be0d1f0e6",
+      "size": 222
+    },
+    {
+      "path": "legacy_recovered/config_parser.py",
+      "sha256": "4d96c60fc96119fbf976036681e60286dfc32c32685b5143f6efa82b83a3d5a8",
+      "size": 186
+    },
+    {
+      "path": "legacy_recovered/jenkins_client.py",
+      "sha256": "fa3a51d4fbd804e413a676aab14bc73c4d997a75d3bf761b14c505cbb0f2d6b7",
+      "size": 1394
+    },
+    {
+      "path": "legacy_recovered/jira_migration_task_generator.py",
+      "sha256": "de894f2f7503ae1163ed9a96541cb935b9b8f31785999be901bb062b4ffad543",
+      "size": 2148
+    },
+    {
+      "path": "legacy_recovered/module4_config_intelligence.py",
+      "sha256": "106f86407ab1e78cfed68b88cd875fc697cab3f243bfec2e49cc10639e14d075",
+      "size": 1386
+    },
+    {
+      "path": "migration_engine/workflow_generator.py",
+      "sha256": "19cf4e49eac3247e84f38ccdff927f3824bd9f61596c64771b08282a78b224da",
+      "size": 63
+    },
+    {
+      "path": "output/demo_snapshot.json",
+      "sha256": "1e3acd2402acc12d40bf7d8ef16a09a60695639fa5cc883468e6f3066ef9c4b1",
+      "size": 987
+    },
+    {
+      "path": "output/enterprise_correlation.json",
+      "sha256": "c6748299ca518eec743e41a7d754b383e4b6a82101a98bd7c12a6c165116ccd7",
+      "size": 2695
+    },
+    {
+      "path": "output/enterprise_readiness.json",
+      "sha256": "6bec611ee8f09e684de0f991c3474bd703d4f1c19db145169786b2668c7d2328",
+      "size": 5960
+    },
+    {
+      "path": "output/generated_workflows/Claims__ui-build.yml",
+      "sha256": "ceb200ac1ca017c4129b02c2ce10af19c9150071b826d9ba4cb4c8a4b5f397db",
+      "size": 402
+    },
+    {
+      "path": "output/generated_workflows/Legacy__batch.yml",
+      "sha256": "86b1b0c62d954d43cde63d92cd260bfc0f498d8f867a392dfebed72ee8f08d60",
+      "size": 421
+    },
+    {
+      "path": "output/generated_workflows/Payments__api-build.yml",
+      "sha256": "62e12256f26c884198211f4dab75e6145d7042bc869870a363451bfd45a98d3d",
+      "size": 478
+    },
+    {
+      "path": "output/generated_workflows/reusable/reusable-java-maven.yml",
+      "sha256": "925cf9d642735f3bddba43b668f922ba04bb74aab61f411ebeeb4a7519fa6c50",
+      "size": 437
+    },
+    {
+      "path": "output/generated_workflows/reusable/reusable-node.yml",
+      "sha256": "6c5702d85fbd7e633880c27b849c421261da61c9e962a3f65ef59c2998faef92",
+      "size": 360
+    },
+    {
+      "path": "output/generated_workflows/reusable/reusable-python.yml",
+      "sha256": "c6d34c893e6b7e12698ecd239489110fd50f52ec9d5fe01074fd77aaa6e5ae58",
+      "size": 381
+    },
+    {
+      "path": "output/github_actions_migration_plan.json",
+      "sha256": "d277e67fa6b72bd883efb822611d28c329f034ba99b3b06bbc74c7e39a8f5b25",
+      "size": 3995
+    },
+    {
+      "path": "output/jira_migration_tasks.json",
+      "sha256": "26c486c05a7c69b6b1c66220ea83fec5e9d001c9c1925a242f9bd14352c7e4a5",
+      "size": 6387
+    },
+    {
+      "path": "output/migration_advisor.json",
+      "sha256": "20e50a239386dc3a7e04abc7ec898b244fee38ae1bf3bd4b4b4b8a1c46f49aec",
+      "size": 1179
+    },
+    {
+      "path": "output/migration_assessment.json",
+      "sha256": "b77dff1f72b1d09aa741b32bf16233cc0867a20af3b967d2d53ee3b915e690e0",
+      "size": 2321
+    },
+    {
+      "path": "output/pattern_analysis.json",
+      "sha256": "624675affa1eea26ff249d3049cc3a18cb28c2930129db4da0ca80fd558cf159",
+      "size": 485
+    },
+    {
+      "path": "output/prerequisites.json",
+      "sha256": "6b1f94f489dd01dcc0320900b6ddfafb193da0ae7fa8fd7c44ee5c0b74be5fb7",
+      "size": 252
+    },
+    {
+      "path": "output/reports/dashboard.html",
+      "sha256": "09c002211418a2875a48af053c799e9a9911566c8b2e88c60829a7833233bd30",
+      "size": 1017
+    },
+    {
+      "path": "output/reports/migration_assessment.csv",
+      "sha256": "137162decb53bbeb7dbabca66676654cfc66ede5492f0ddcaf5a7ddb6a7fce9d",
+      "size": 470
+    },
+    {
+      "path": "output/reports/migration_assessment.json",
+      "sha256": "d1c2ca901c4695f70253b71db14f5d32c18f3970c0831e44246b03e666e35fa3",
+      "size": 3775
+    },
+    {
+      "path": "output/validation_checklist.json",
+      "sha256": "0b672357f6a0a3ea87a03102ce28948d5c6dc46997ae9e9835223fc9b14914be",
+      "size": 2050
+    },
+    {
+      "path": "pipelineforge/__init__.py",
+      "sha256": "46c663463329acd7039bdef0a9145293aad32e04d7f0dd06ca2719c99f0eb014",
+      "size": 22
+    },
+    {
+      "path": "pipelineforge/cli.py",
+      "sha256": "154757a978d83d97f20ddfe5c27162f7aa90fd2d1afbbdd46778209068ed390e",
+      "size": 10147
+    },
+    {
+      "path": "pipelineforge/config.py",
+      "sha256": "46c19ed59edefb3e85bf6b75ae8703e3b837c514a4eeedcbc8cc38f4e27aa2d7",
+      "size": 257
+    },
+    {
+      "path": "pipelineforge/connectors/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "pipelineforge/connectors/github.py",
+      "sha256": "b3d52ff6ff9834428c21ea2ce7df3d3de4df4addfef7491b8ffd97197257241d",
+      "size": 4468
+    },
+    {
+      "path": "pipelineforge/connectors/jenkins.py",
+      "sha256": "d7d85de383cb3e9e2ea2c7c1a721b28891134013c1e308ea020e5757779b28a5",
+      "size": 2302
+    },
+    {
+      "path": "pipelineforge/engines/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "pipelineforge/engines/advisor.py",
+      "sha256": "dd60821b451a44bd4963a27ef29bc8823c4482c9888bd6d8bc2bda8e1aee4e43",
+      "size": 1463
+    },
+    {
+      "path": "pipelineforge/engines/analysis.py",
+      "sha256": "a3879418d3deeb50be5a10b2584fbcd3ef86a6dc6a47033cd3c81889be74a525",
+      "size": 1127
+    },
+    {
+      "path": "pipelineforge/engines/config_intelligence.py",
+      "sha256": "204041eb5d76e616620b12c919342e5fd093abe21f1ace9c7b4e3dddaa71e5df",
+      "size": 1134
+    },
+    {
+      "path": "pipelineforge/engines/continuous.py",
+      "sha256": "d812a5a58ea8a2d1bb77fbe2ed5cac75e4f307cefb6dfd4d8f0b115a1c3eee25",
+      "size": 1211
+    },
+    {
+      "path": "pipelineforge/engines/discovery.py",
+      "sha256": "5e085e8f2669046d42259f8385a34b39400d320f2838e1973abb956def1ac554",
+      "size": 893
+    },
+    {
+      "path": "pipelineforge/engines/enterprise_integration.py",
+      "sha256": "c0e3631953fe301d2f29fd6446b40ec66644a6fd72d193ebe9cd4f12d5dd5cfd",
+      "size": 4843
+    },
+    {
+      "path": "pipelineforge/engines/jira_export.py",
+      "sha256": "72742423086813acf5e025d1700917b1f2caf4bfab0bbfd082fbb9ea56feb4a0",
+      "size": 812
+    },
+    {
+      "path": "pipelineforge/engines/matcher.py",
+      "sha256": "8ab231506b93ec77c4d9e00ce892a97c426918b5df8d5b8488c0b774b456fe32",
+      "size": 1774
+    },
+    {
+      "path": "pipelineforge/engines/patterns.py",
+      "sha256": "42e37f120b6319452908bdf1c311b69dc4c51d5f3da59ea625752d0326593d55",
+      "size": 587
+    },
+    {
+      "path": "pipelineforge/engines/planner.py",
+      "sha256": "61c2524d6ba64c589ab4cffbb7f86f25cb0813abba3953fb6e686848ebed43a4",
+      "size": 1340
+    },
+    {
+      "path": "pipelineforge/engines/prerequisites.py",
+      "sha256": "0a3703b3805620fb61bbf01742a713e42d5f678a45bd49c378612120340a8e86",
+      "size": 560
+    },
+    {
+      "path": "pipelineforge/engines/validation.py",
+      "sha256": "8ac1e4b28417b4af577c3243e96d1842717da850e10205f0a75e732aff628a35",
+      "size": 1735
+    },
+    {
+      "path": "pipelineforge/engines/workflow_generator.py",
+      "sha256": "ff43f9f43f55455e0dfe352e5a3229adbb6e08095624b036fc8f106a28609dff",
+      "size": 2958
+    },
+    {
+      "path": "pipelineforge/reporting/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "pipelineforge/reporting/report.py",
+      "sha256": "3335b02229e97823ac7ae4dee4d090ee1dae5dde5fec9ee810243c3de278f0be",
+      "size": 1827
+    },
+    {
+      "path": "pipelineforge.py",
+      "sha256": "8604aef96e643376fc460781dc03df5145bdfcf65b94e7f0024d5df8fef4d11b",
+      "size": 67
+    },
+    {
+      "path": "reporting/report_generator.py",
+      "sha256": "53499556b2a9fd7ac24518e654f9af8cf75c22072e668bc98794144b24654a6c",
+      "size": 47
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "dfb599a9b86d5de859901751a5562b7103217f4de74f4313c95998ea422c345a",
+      "size": 18
+    },
+    {
+      "path": "sample_data/github_inventory.json",
+      "sha256": "19a810046bf5b311de234a8382821634759b9041563216187897aa42b1abb8da",
+      "size": 956
+    },
+    {
+      "path": "sample_data/jenkins_items.json",
+      "sha256": "d13a08ceb01ddc29300dbdcfa026b758efb6c18e2cecbb0b71b8eaaaa47adfd0",
+      "size": 732
+    },
+    {
+      "path": "sample_data/repository_inventory.json",
+      "sha256": "add781be91eb69cbac678a0b1f663ce76f50e220a78f9843a7d2f0a38ed8774d",
+      "size": 1072
+    },
+    {
+      "path": "services/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "services/analysis_service.py",
+      "sha256": "fb099f740e98fb7cfec0bb2420244cec0593e9ac6a4a85c69f966ad06d5c4872",
+      "size": 95
+    },
+    {
+      "path": "services/jenkins_service.py",
+      "sha256": "d1d539c8d0490d7740ca64fe87a62427790f24d305b538af58586f789c443101",
+      "size": 87
+    },
+    {
+      "path": "services/reporting_service.py",
+      "sha256": "667f90b25cb9a253e8d8ac6a81b727bbc21ce77361c2e9765f4dc38ac537c317",
+      "size": 86
+    },
+    {
+      "path": "services/scoring_service.py",
+      "sha256": "d43633c97d79454de847ed6d3c74b2fdd469033cdb7648049240be051e5edc03",
+      "size": 100
+    },
+    {
+      "path": "tests/test_core.py",
+      "sha256": "0bdcb8dd96be95b273f6c5efd78918439a75016028526e4d38b43d8ea6755d73",
+      "size": 842
+    },
+    {
+      "path": "tests/test_enterprise_integration.py",
+      "sha256": "27edfc402cdaf833565dd0d1f7efd9d57ab52b8aada31fbdd48ddc9fe92d38b5",
+      "size": 1716
+    }
+  ]
+}

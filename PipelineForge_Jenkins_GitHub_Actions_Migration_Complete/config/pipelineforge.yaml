@@ -1,0 +1,17 @@
+environment: local
+
+jenkins:
+  enabled: true
+  url: ''
+
+gitlab:
+  enabled: true
+  url: ''
+
+github:
+  enabled: true
+  url: ''
+
+jira:
+  enabled: true
+  url: ''

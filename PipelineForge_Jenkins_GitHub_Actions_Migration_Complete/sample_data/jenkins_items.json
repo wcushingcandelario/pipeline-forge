@@ -1,0 +1,26 @@
+[
+  {
+    "full_name": "Payments/api-build",
+    "name": "api-build",
+    "url": "https://jenkins.example/job/Payments/job/api-build/",
+    "class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+    "color": "blue",
+    "item_type": "pipeline"
+  },
+  {
+    "full_name": "Claims/ui-build",
+    "name": "ui-build",
+    "url": "https://jenkins.example/job/Claims/job/ui-build/",
+    "class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+    "color": "blue",
+    "item_type": "pipeline"
+  },
+  {
+    "full_name": "Legacy/batch",
+    "name": "batch",
+    "url": "https://jenkins.example/job/Legacy/job/batch/",
+    "class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+    "color": "blue",
+    "item_type": "pipeline"
+  }
+]
